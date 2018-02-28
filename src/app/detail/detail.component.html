@@ -1,0 +1,25 @@
+<main>
+    <div fxLayout="row" fxLayoutAlign="center" *ngIf="!character">
+        <i class="fas fa-spinner fa-spin fa-5x"></i>
+    </div>
+
+    <mat-card *ngIf="character" class="app-card-detail">
+        <mat-card-header>
+            <mat-card-title>{{character.name|titlecase}}</mat-card-title>
+        </mat-card-header>
+        <div fxLayout="row wrap" fxLayoutAlign="center stretched">
+            <img mat-card-image src="{{character.sprites.front_default}}" alt="{{character.name}}">
+            <img mat-card-image src="{{character.sprites.back_default}}" alt="{{character.name}}">
+            <img mat-card-image src="{{character.sprites.front_shiny}}" alt="{{character.name}}">
+            <img mat-card-image src="{{character.sprites.back_shiny}}" alt="{{character.name}}">
+        </div>
+        <mat-card-content>
+            <mat-chip-list fxLayout="row" fxLayoutAlign="space-around center" *ngFor="let ability of character.abilities">
+                <mat-chip>{{ ability.ability.name }}</mat-chip>
+            </mat-chip-list>
+        </mat-card-content>
+        <mat-card-actions align="end">
+            
+        </mat-card-actions>
+    </mat-card>
+</main>

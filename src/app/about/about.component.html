@@ -1,0 +1,12 @@
+<main>
+    <h1>Suggérer l'ajout d'un personnage</h1>
+    <form #f="ngForm" (ngSubmit)="submit(f.value)">
+        <mat-form-field>
+            <input matInput placeholder="Email" name="email" ngModel>
+        </mat-form-field>
+        <mat-form-field>
+            <input matInput placeholder="Username" name="username" [ngModel]="currentUser">
+        </mat-form-field>
+        <button mat-raised-button color="accent" (click)="ngSubmit">Go</button>
+    </form>
+</main>
